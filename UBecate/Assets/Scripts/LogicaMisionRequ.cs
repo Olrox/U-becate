@@ -8,14 +8,14 @@ public class LogicaMisionRequ : MonoBehaviour
 {
     public int numObjetivos;
     public TextMeshProUGUI textoMision;
-    // Start is called before the first frame update
+
     void Start()
     {
         numObjetivos = GameObject.FindGameObjectsWithTag("Objetivo").Length;
         textoMision.text = "Busca los requisitos de la beca" + "\n Restantes: " + numObjetivos;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
