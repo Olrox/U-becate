@@ -1,38 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class LogicaMisionRequ : MonoBehaviour
 {
-    public int numObjetivos;
-    public TextMeshProUGUI textoMision;
-
-    void Start()
-    {
-        numObjetivos = GameObject.FindGameObjectsWithTag("Objetivo").Length;
-        textoMision.text = "Busca los requisitos de la beca" + "\n Restantes: " + numObjetivos;
-    }
-
-
-    void Update()
-    {
-        
-    }
-
+    public LogicaPC logicaPC;
     void OnTriggerEnter (Collider col)
     {
-    if (col.gameObject.tag == "Objetivo")
+    if (col.tag == "Player")
     {
-        Destroy(col.transform.parent.gameObject);
-        numObjetivos--;
-        textoMision.text = "Busca los requisitos de la beca" + "\n Restantes: " + numObjetivos;
-        if (numObjetivos <= 0)
-        {
-            textoMision.text = "Completaste la búsqueda";
-
-        }
+        logicaPC.numObjetivos--;
+        logicaPC.textoMision.text = "Busca los requisitos de la beca" + "\n Restantes: " + logicaPC.numObjetivos;
+            if (logicaPC.numObjetivos <= 0)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                logicaPC.textoMision.text = "Completaste la búsqueda";
+                logicaPC.botonMision.SetActive(true);
+            }
+            //animación
+            transform.parent.gameObject.SetActive(false);
     }
     }
 }

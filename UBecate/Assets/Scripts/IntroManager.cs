@@ -31,17 +31,8 @@ public class DialogeManager : MonoBehaviour
                 StopAllCoroutines();
                 dialogeText.text = lines[index];
 
-            }          
+            }        
         }
-
-        /*if (Input.GetMouseButtonUp(0)){
-
-            if(index == 6)
-            {
-                SceneManager.LoadScene("JefeLVL1");
-            }
-        }*/
-
         
     }
 
@@ -73,9 +64,9 @@ public class DialogeManager : MonoBehaviour
             }
         }
 
-        else
+        /*else
         {
             gameObject.SetActive(false);
-        }
+        }*/
     }
 }
