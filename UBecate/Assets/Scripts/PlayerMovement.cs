@@ -7,13 +7,16 @@ public class PlayerMovement3D : MonoBehaviour
     Rigidbody rb;
     Vector2 inputMov;
     Vector2 inputRot;
+    public GameObject panelInstruccion; // panel que muestra el mensaje de la instrucción
     public float VelCamina = 10f;
 
     public float sensibilidadMouse = 1;
     Transform cam;
     float rotX;
 
-    void Start ()
+    //public AudioSource sonidoEntrada; // sonido al iniciar
+
+    void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -22,7 +25,17 @@ public class PlayerMovement3D : MonoBehaviour
         cam = transform.GetChild(1);
         rotX = cam.eulerAngles.x;
 
+        //sonidoEntrada.Play();
+
+        panelInstruccion.SetActive(true);
+        Invoke("OcultarPanel", 5.0f); // Llama a OcultarPanel después de 5 segundos
     }
+
+    void OcultarPanel()
+    {
+        panelInstruccion.SetActive(false);
+    }
+
     void Update()
     {
         inputMov.x = Input.GetAxis("Horizontal"); //
@@ -39,18 +52,18 @@ public class PlayerMovement3D : MonoBehaviour
     }
 
     private void FixedUpdate()
-{
-    // Crear vector de movimiento y normalizar
-    Vector3 movement = (transform.forward * inputMov.y + transform.right * inputMov.x).normalized;
+    {
+        // Crear vector de movimiento y normalizar
+        Vector3 movement = (transform.forward * inputMov.y + transform.right * inputMov.x).normalized;
     
-    // Aplicar velocidad manteniendo la velocidad Y actual (gravedad)
-    rb.velocity = movement * VelCamina + new Vector3(0, rb.velocity.y, 0);
+        // Aplicar velocidad manteniendo la velocidad Y actual (gravedad)
+        rb.velocity = movement * VelCamina + new Vector3(0, rb.velocity.y, 0);
 
-    // Rotación (tu código actual está bien)
-    transform.rotation *= Quaternion.Euler(0, inputRot.x, 0);
+        // Rotación (tu código actual está bien)
+        transform.rotation *= Quaternion.Euler(0, inputRot.x, 0);
     
-    rotX -= inputRot.y;
-    rotX = Mathf.Clamp(rotX, -50, 30);
-    cam.localRotation = Quaternion.Euler(rotX, 0, 0);
-}
+        rotX -= inputRot.y;
+        rotX = Mathf.Clamp(rotX, -50, 30);
+        cam.localRotation = Quaternion.Euler(rotX, 0, 0);
+    }
 }

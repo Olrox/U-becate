@@ -9,14 +9,17 @@ public class LogicaPC : MonoBehaviour
     public GameObject simboloMision;
     public PlayerMovement3D jugador;
     public GameObject panel1PC;
-    public GameObject panel2PC; // este no va
+    public GameObject panel2PC;
+    public GameObject panel3PC;
     public GameObject panel1PCMision;
     public TextMeshProUGUI textoMision;
     public bool jugadorCerca;
     public bool aceptarMision;
+    public bool diaDPago = false;
     public GameObject[] objetivos;
     public int numObjetivos;
     public GameObject botonMision;
+    public GameObject posterGuia;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,7 @@ public class LogicaPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && aceptarMision == false)
+        if (Input.GetKeyDown(KeyCode.E) && jugadorCerca && aceptarMision == false)
         {
             Vector3 posicionjugador = new Vector3(transform.position.x, jugador.gameObject.transform.position.y, transform.position.z);
             jugador.gameObject.transform.LookAt(posicionjugador);
@@ -38,6 +41,18 @@ public class LogicaPC : MonoBehaviour
             jugador.enabled = false;
             panel1PC.SetActive(false);
             panel2PC.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && jugadorCerca && aceptarMision == true && diaDPago == true)
+        {
+            Vector3 posicionjugador = new Vector3(transform.position.x, jugador.gameObject.transform.position.y, transform.position.z);
+            jugador.gameObject.transform.LookAt(posicionjugador);
+
+            jugador.enabled = false;
+            panel1PCMision.SetActive(false);
+            panel3PC.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -91,6 +106,6 @@ public class LogicaPC : MonoBehaviour
         panel1PCMision.SetActive(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        
+        posterGuia.SetActive(true);
     }
 }
