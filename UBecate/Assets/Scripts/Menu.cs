@@ -46,7 +46,19 @@ public class Menu : MonoBehaviour
     }
     public void CargarJuego()
     {
-        SceneManager.LoadScene("Lvl1");
-    }
+        int escenaActualIndex = SceneManager.GetActiveScene().buildIndex;
+        int siguienteEscenaIndex = escenaActualIndex + 1;
     
+        // Verifica si hay una siguiente escena en Build Settings
+        if (siguienteEscenaIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(siguienteEscenaIndex);
+        }
+        else
+        {
+            // Si es la última escena, carga la primera (o un menú principal)
+            // Cambia "MenuPrincipal" por el nombre de tu escena de menú si prefieres
+            SceneManager.LoadScene(0);  // O SceneManager.LoadScene("MenuPrincipal");
+        }
+    }
 }
