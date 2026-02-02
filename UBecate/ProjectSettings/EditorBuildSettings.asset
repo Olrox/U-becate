@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intermedio.unity
     guid: 1d5fa5bb25173f24a909fedb4f3071da
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lvl2Tutorial.unity
     guid: 8e6bdd67943b05542bf27c92f52d2443
   - enabled: 1

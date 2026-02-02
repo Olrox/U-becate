@@ -60,7 +60,7 @@ private bool terceroPanelClicado = false;
         // Limpia textos
         if (dialogeText != null) dialogeText.text = string.Empty;
         if (nameText != null) nameText.text = string.Empty;
-        if (textoInicial != null) textoInicial.alpha = 0f;  // Empieza invisible
+        if (textoInicial != null) textoInicial.alpha = 1f;  // Empieza invisible
 
         // Oculta elementos iniciales
         if (imagenTitilante != null) imagenTitilante.SetActive(false);
