@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     [Header("Botones de Game Over")]
     public Button restartButton;
     public Button mainMenuButton;
+    public Button nextLvlButton;
 
     [Header("--- Elementos de Documentos ---")]
     [Space(5)]
@@ -411,7 +412,12 @@ private IEnumerator ShowFeedbackCoroutine(string message, AudioClip soundClip)
 
     public void MainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); //
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EscenaPrincipal"); //
+    }
+
+    public void NextLvl()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Final"); //
     }
 
     private void DisableInteractionButtons()

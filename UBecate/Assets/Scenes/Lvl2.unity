@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Inicio
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3712,7 +3712,7 @@ GameObject:
   - component: {fileID: 839040965}
   - component: {fileID: 839040964}
   m_Layer: 5
-  m_Name: Inicio
+  m_Name: NextLvl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3784,7 +3784,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1796828816}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MainMenu
+        m_MethodName: NextLvl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8317,6 +8317,7 @@ MonoBehaviour:
   denyButton: {fileID: 1605488151}
   restartButton: {fileID: 872724427}
   mainMenuButton: {fileID: 956902308}
+  nextLvlButton: {fileID: 839040964}
   docPhoto: {fileID: 1911066319}
   docNameText: {fileID: 1770437070}
   docIdNumberText: {fileID: 145619773}
@@ -8345,8 +8346,8 @@ MonoBehaviour:
   dialogePanel: {fileID: 614030168}
   dialogeText: {fileID: 1202013831}
   npcFeedbackMessages:
-  - "\xA1Listo! Por favor queden atentos a la pagina web"
-  - 'El screenshot del ESTADO DE CUENTA es incorrecto  '
+  - "\xA1Listo! Por favor queden atentos a la p\xE1gina de INTEGRA"
+  - 'El PDF del ESTADO DE CUENTA es incorrecto  '
   - "\xA1Excelente! Tus documentos estan bien"
   - "Tu nombre est\xE1 incorrecto, por favor ACTUALIZA TUS DATOS en tu facultad"
   - Necesita una carta poder para realizar el tramite por la persona interesada
