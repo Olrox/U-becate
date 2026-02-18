@@ -833,8 +833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 206}
-  m_SizeDelta: {x: 451.2826, y: 151.98}
+  m_AnchoredPosition: {x: -185, y: 241}
+  m_SizeDelta: {x: 288.2361, y: 151.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &484854734
 MonoBehaviour:
@@ -1390,9 +1390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NameText
-
-'
+  m_text: Goyo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1816,26 +1814,26 @@ MonoBehaviour:
   dialogeText: {fileID: 258328119}
   nameText: {fileID: 1000078458}
   dialogueLines:
-  - speakerName: _____
+  - speakerName: Yo
     lineText: "Mis amistades de la universidad me platicaron que actualmente hay
       convocatorias para buscar becas, sin embargo, no tengo la menor idea de c\xF3mo
       solicitar una, ojal\xE1 tuviera ayuda para realizar este tr\xE1mite."
   - speakerName: ???
     lineText: "\xBFMe hablabas a mi?"
-  - speakerName: _____
+  - speakerName: Yo
     lineText: "\xBFQui\xE9n est\xE1 ah\xED? No se quien seas pero sal de mi cabeza
       \xA1Ahora!"
   - speakerName: Goyo
     lineText: "Tranquilo, soy Goyo, un ente programado\u2026 digo, creado para ayudarte
       en este proceso."
-  - speakerName: _____
+  - speakerName: Yo
     lineText: "\xBFProgramado?"
   - speakerName: Goyo
     lineText: " Eso no es lo importante. \xBFTe interesar\xEDa tener un apoyo para
       continuar con tu vida de estudiante?"
-  - speakerName: _____
+  - speakerName: Yo
     lineText: ' La verdad es que...'
-  - speakerName: _____
+  - speakerName: Yo
     lineText: "(\xBFQu\xE9 deber\xEDa responder?)"
   textSpeed: 0.09
   botones:
@@ -2469,7 +2467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209, y: 100}
+  m_AnchoredPosition: {x: -209, y: 87}
   m_SizeDelta: {x: 451.2826, y: 151.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791534525

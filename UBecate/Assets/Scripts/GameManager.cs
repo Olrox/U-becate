@@ -191,6 +191,7 @@ internal IEnumerator ProcessNextNPC()
         // Habilitar el resto de botones una vez vistos los documentos
         infoButton.interactable = true;
         checklistButton.interactable = true;
+        
     }
 
     public void ToggleInfoPanel()

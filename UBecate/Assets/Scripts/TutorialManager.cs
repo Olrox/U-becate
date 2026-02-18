@@ -84,7 +84,7 @@ public class TutorialManager : MonoBehaviour
         // Diálogo inicial
         dialogoInicial = new DialogueStep[]
         {
-            new DialogueStep("Goyo", "¡Bienvenido a tu primer día de trabajo!"),
+            new DialogueStep("Goyo", "¡Bienvenido a tu misión!"),
             new DialogueStep("Tú", "Dónde me llevaste, espera, ¿Por qué estoy trabajando en una ventanilla? y más importante ¿Por qué estoy existiendo en 2D?"),
             new DialogueStep("Goyo", "Te acabo de preparar una simulación dibujada por mí y para que quedarás a juego con ella, te acabo de redimensionar. ¿Actualmente estás viendo la vida como yo la veo, una gran diferencia a tu cuarto, no es así?"),
             new DialogueStep("Tú","¿Estás diciendo que mi cuarto se veía aburrido y sin color? Dejame decirte que mi casa tiene un árbol completamente verde y me tardé mucho en pintarlo."),
