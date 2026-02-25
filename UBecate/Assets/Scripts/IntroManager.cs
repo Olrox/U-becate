@@ -1,35 +1,38 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public class DialogueLine  // ← ¡Cambia struct por class!
+public class DialogueLine
 {
     [Header("Nombre del hablante")]
     public string speakerName;
     
     [Header("Texto de la línea")]
+    [TextArea(3,6)]
     public string lineText;
 }
 
 public class IntroManager : MonoBehaviour
 {
+    [Header("Panel Intermedio (imagen 10 segundos)")]
+    public GameObject panelIntermedio;       // ← Arrastra aquí el panel con la imagen
+    public float tiempoIntermedio = 10f;     // Duración antes de pasar al diálogo
+
     [Header("Texto del diálogo")]
     public TextMeshProUGUI dialogeText;
     
-    [Header("Nombre del hablante (asigna un TextMeshProUGUI separado)")]
-    public TextMeshProUGUI nameText;  // ← Nuevo: Asigna este campo en el Inspector con un TextMeshProUGUI para los nombres
+    [Header("Nombre del hablante")]
+    public TextMeshProUGUI nameText;
     
     [Header("Líneas del diálogo")]
-    public DialogueLine[] dialogueLines;  // ← Reemplaza string[] lines → Ahora cada línea tiene nombre + texto
+    public DialogueLine[] dialogueLines;
     
     public float textSpeed = 0.07f;
-    private int index;
 
-    [Header("Botones a activar al finalizar el diálogo")]
-    public GameObject[] botones;
+    [Header("Botones de decisión (se activan al final del diálogo)")]
+    public GameObject[] botonesDecision;
 
     [Header("Negación")]
     public string negacionText = "¡Has elegido la negación!...";
@@ -37,13 +40,76 @@ public class IntroManager : MonoBehaviour
 
     private string targetText;
     private bool interactionEnabled = true;
+    private int index;
 
     void Start()
     {
+        // Forzar estado limpio cada vez que se carga la escena
         dialogeText.text = string.Empty;
-        if (nameText != null) nameText.text = string.Empty;  // ← Limpia el nombre al inicio
+        if (nameText != null) nameText.text = string.Empty;
+
         interactionEnabled = true;
+
+        // Asegurarse de que el panel intermedio esté desactivado al cargar
+        if (panelIntermedio != null)
+        {
+            panelIntermedio.SetActive(false);
+        }
+
+        // Ocultar botones de decisión al inicio (siempre)
+        SetDecisionButtonsActive(false);
+
+        // Iniciar flujo completo
+        StartCoroutine(FlujoCompleto());
+    }
+
+    IEnumerator FlujoCompleto()
+    {
+        // 1. Mostrar panel intermedio (imagen durante X segundos)
+        if (panelIntermedio != null)
+        {
+            panelIntermedio.SetActive(true);
+            yield return new WaitForSeconds(tiempoIntermedio);
+            panelIntermedio.SetActive(false);
+        }
+
+        // 2. Iniciar diálogo inmediatamente después
         StartDialogue();
+    }
+
+    private void StartDialogue()
+    {
+        index = 0;
+        if (dialogueLines.Length > 0)
+        {
+            SetSpeaker(dialogueLines[0].speakerName);
+            StartCoroutine(TypeText(dialogueLines[0].lineText));
+        }
+        else
+        {
+            Debug.LogWarning("No hay líneas de diálogo asignadas → activando botones directamente");
+            SetDecisionButtonsActive(true);
+        }
+    }
+
+    private void SetSpeaker(string speakerName)
+    {
+        if (nameText != null)
+        {
+            nameText.text = speakerName + ": ";
+        }
+    }
+
+    IEnumerator TypeText(string text)
+    {
+        targetText = text;
+        dialogeText.text = string.Empty;
+
+        foreach (char letter in text.ToCharArray())
+        {
+            dialogeText.text += letter;
+            yield return new WaitForSeconds(textSpeed);
+        }
     }
 
     void Update()
@@ -64,72 +130,31 @@ public class IntroManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue()
-    {
-        index = 0;
-        if (dialogueLines.Length > 0)
-        {
-            SetSpeaker(dialogueLines[0].speakerName);  // ← Muestra el nombre del primer hablante
-            StartCoroutine(TypeText(dialogueLines[0].lineText));
-        }
-    }
-
-    // ← Nueva función: Configura el nombre del hablante
-    private void SetSpeaker(string speakerName)
-    {
-        if (nameText != null)
-        {
-            nameText.text = speakerName + ": ";  // ← Formato "Nombre: "
-        }
-    }
-
-    IEnumerator TypeText(string text)
-    {
-        targetText = text;
-        dialogeText.text = string.Empty;
-
-        foreach (char letter in text.ToCharArray())
-        {
-            dialogeText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
-        }
-    }
-
     public void NextLine()
     {
         if (index < dialogueLines.Length - 1)
         {
             index++;
-            SetSpeaker(dialogueLines[index].speakerName);  // ← Cambia el nombre para la siguiente línea
+            SetSpeaker(dialogueLines[index].speakerName);
             StartCoroutine(TypeText(dialogueLines[index].lineText));
         }
         else
         {
-            ActivateButtons();
+            // Diálogo terminado → activar botones de decisión
+            SetDecisionButtonsActive(true);
+            Debug.Log("Diálogo terminado → botones de decisión activados");
         }
     }
 
-    private void ActivateButtons()
+    private void SetDecisionButtonsActive(bool active)
     {
-        foreach (GameObject boton in botones)
+        foreach (GameObject boton in botonesDecision)
         {
             if (boton != null)
-                boton.SetActive(true);
+            {
+                boton.SetActive(active);
+            }
         }
-    }
-
-    private void DeactivateButtons()
-    {
-        foreach (GameObject boton in botones)
-        {
-            if (boton != null)
-                boton.SetActive(false);
-        }
-    }
-
-    private void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Negacion()
@@ -139,16 +164,20 @@ public class IntroManager : MonoBehaviour
 
     IEnumerator NegacionSequence()
     {
-        DeactivateButtons();
+        // 1. Bloquear interacción completa
+        interactionEnabled = false;
 
-        // ← Limpia el nombre para la negación (o pon "Sistema: " si quieres)
-        if (nameText != null) nameText.text = string.Empty;
+        // 2. Desactivar botones de decisión inmediatamente
+        SetDecisionButtonsActive(false);
 
-        // Escribe la línea de negación
+        // 3. Limpiar nombre (opcional)
+        if (nameText != null) nameText.text = "";
+
+        // 4. Mostrar mensaje de negación
         yield return StartCoroutine(TypeText(negacionText));
 
-        interactionEnabled = false;
+        // 5. Esperar y recargar escena
         yield return new WaitForSeconds(reloadDelay);
-        ReloadLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

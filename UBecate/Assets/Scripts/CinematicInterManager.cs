@@ -138,8 +138,14 @@ private bool terceroPanelClicado = false;
 
                 if (panelTercero != null)
                 {
-                    panelTercero.SetActive(true);
-                    botonTercero.interactable = true;
+                    // ── CAMBIO AQUÍ ──────────────────────────────────────────────────────
+                    panelTercero.SetActive(true);               // Primero se muestra el panel
+                    //botonTercero.interactable = false;          // Botón desactivado al inicio
+
+                    // Espera 5 segundos antes de habilitar el botón
+                    yield return new WaitForSeconds(9f);
+
+                    botonTercero.interactable = true;           // Ahora sí se puede interactuar
 
                     // Espera hasta que el jugador presione el botón
                     while (!terceroPanelClicado)
@@ -149,6 +155,7 @@ private bool terceroPanelClicado = false;
 
                     panelTercero.SetActive(false);
                     terceroPanelClicado = false; // Reset
+                    // ────────────────────────────────────────────────────────────────────
                 }
             }
 
@@ -194,6 +201,7 @@ private bool terceroPanelClicado = false;
     if (imagenTitilante == null || canvasGroupTitilante == null) yield break;
 
     imagenTitilante.SetActive(true);
+    botonTercero.interactable = false;
     canvasGroupTitilante.alpha = 1f;  // Empieza visible
 
     for (int i = 0; i < titilosCount; i++)

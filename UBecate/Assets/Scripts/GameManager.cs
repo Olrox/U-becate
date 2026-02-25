@@ -32,6 +32,10 @@ public class NPCData
     public bool nationalityIsValid;     // true = la nacionalidad es la oficial/válida
     public bool councilLetterIsPresent; // true = tiene carta del consejo cuando la necesita
     public GameObject npcPrefab;
+
+    [Header("Mensaje al llegar (Diálogo del NPC)")]
+    [TextArea(2,4)]
+    public string greetingMessage = "¡Hola! Vengo a tramitar mi documento.";  // Mensaje por defecto
 }
 
 public class GameManager : MonoBehaviour
@@ -131,42 +135,62 @@ public class GameManager : MonoBehaviour
         // Iniciar el primer NPC
         StartCoroutine(ProcessNextNPC());
     }
-internal IEnumerator ProcessNextNPC()
-{
-    Debug.Log($"Procesando NPC #{currentIndex}");
-
-    if (currentIndex >= npcs.Count)
+    internal IEnumerator ProcessNextNPC()
     {
-        Debug.Log("¡Todos los NPCs terminados! → Victoria");
-        victoryPanel.SetActive(true);
-        yield break;
-    }
+        Debug.Log($"Procesando NPC #{currentIndex}");
 
-    currentNPC = npcs[currentIndex];
-    Debug.Log($"Instanciando NPC: {currentNPC.npcName}");
+        if (currentIndex >= npcs.Count)
+        {
+            Debug.Log("¡Todos los NPCs terminados! → Victoria");
+            victoryPanel.SetActive(true);
+            yield break;
+        }
 
-    currentNPCInstance = Instantiate(currentNPC.npcPrefab, Vector3.zero, Quaternion.identity);
-    Debug.Log("NPC instanciado con éxito");
+        currentNPC = npcs[currentIndex];
+        Debug.Log($"Instanciando NPC: {currentNPC.npcName}");
 
-    Animator anim = currentNPCInstance.GetComponent<Animator>();
-    if (anim != null)
-    {
-        Debug.Log("Animator encontrado → Reproduciendo Approach");
-        anim.Play("Acercandose");
-    }
-    else
-    {
-        Debug.LogError("¡El prefab NO tiene componente Animator!");
-    }
+        currentNPCInstance = Instantiate(currentNPC.npcPrefab, Vector3.zero, Quaternion.identity);
+        Debug.Log("NPC instanciado con éxito");
 
-    yield return new WaitForSeconds(2f);
+        Animator anim = currentNPCInstance.GetComponent<Animator>();
+        if (anim != null)
+        {
+            Debug.Log("Animator encontrado → Reproduciendo Acercandose");
+            anim.Play("Acercandose");
+        }
+        else
+        {
+            Debug.LogError("¡El prefab NO tiene componente Animator!");
+        }
+
+        // Esperamos a que termine la animación de acercamiento
+        yield return new WaitForSeconds(2f);  // ← Ajusta este tiempo al largo real de tu animación "Acercandose"
+
+        // ── NUEVO: Mostrar diálogo del NPC ──────────────────────────────────────
+        if (dialogePanel != null && dialogeText != null && !string.IsNullOrEmpty(currentNPC.greetingMessage))
+        {
+            dialogeText.text = currentNPC.greetingMessage;
+            dialogePanel.SetActive(true);
+            Debug.Log($"Diálogo del NPC mostrado: {currentNPC.greetingMessage}");
+
+            // Esperamos un tiempo para que el jugador lea (ajusta según necesites)
+            yield return new WaitForSeconds(3f);  // ← 3 segundos por defecto
+
+            dialogePanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("No hay panel de diálogo o mensaje vacío para este NPC");
+        }
+        // ────────────────────────────────────────────────────────────────────────
 
     Debug.Log("Habilitando botón de documentos");
     if (documentsButton != null)
         documentsButton.interactable = true;
     else
         Debug.LogError("documentsButton NO está asignado en el Inspector!");
-        checklistSubmitted = false;  // Resetear para nuevo NPC
+
+    checklistSubmitted = false;  // Resetear para nuevo NPC
 }
 
     // ── Botones de interacción ────────────────────────────────────────────────
