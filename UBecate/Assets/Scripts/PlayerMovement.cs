@@ -28,7 +28,7 @@ public class PlayerMovement3D : MonoBehaviour
         //sonidoEntrada.Play();
 
         panelInstruccion.SetActive(true);
-        Invoke("OcultarPanel", 5.0f); // Llama a OcultarPanel después de 5 segundos
+        Invoke("OcultarPanel", 15.0f); // Llama a OcultarPanel después de 5 segundos
     }
 
     void OcultarPanel()
