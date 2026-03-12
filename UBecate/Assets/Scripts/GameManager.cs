@@ -22,15 +22,12 @@ public class NPCData
     public Sprite nationalityImage;         // Imagen oficial de nacionalidad
     public Sprite presentedNationality;     // Imagen que entrega (puede ser falsa)
 
-    [Header("Carta del Consejo")]
-    public bool hasCouncilLetter;           // ¿Tiene carta que autoriza pasar aunque no se parezca?
-    public Sprite councilLetterImage;       // Imagen de la carta (si la tiene)
 
     [Header("Errores / Inconsistencias (para el checklist)")]
     public bool photoIsCorrect;         // true = la foto realmente coincide
     public bool nameIsCorrect;          // true = el nombre es correcto
     public bool nationalityIsValid;     // true = la nacionalidad es la oficial/válida
-    public bool councilLetterIsPresent; // true = tiene carta del consejo cuando la necesita
+
     public GameObject npcPrefab;
 
     [Header("Mensaje al llegar (Diálogo del NPC)")]
@@ -77,7 +74,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI docCityText;
     public TextMeshProUGUI docKeyCodeText;
     public Image docNationality;
-    public Image docLetter;
+
 
     [Header("--- Panel de Información ---")]
     public Image infoPhoto;
@@ -91,7 +88,6 @@ public class GameManager : MonoBehaviour
     public Toggle photoToggle;
     public Toggle nameToggle;
     public Toggle nationalityToggle;
-    public Toggle letterToggle;
     public bool checklistSubmitted = false;
 
     [Header("--- Feedback y Sonidos ---")]
@@ -208,9 +204,6 @@ public class GameManager : MonoBehaviour
         docCityText.text = currentNPC.city;             // Asume TextMeshProUGUI docCityText
         docKeyCodeText.text = currentNPC.keyCode;       // Asume TextMeshProUGUI docKeyCodeText
 
-        docLetter.gameObject.SetActive(currentNPC.hasCouncilLetter);
-        if (currentNPC.hasCouncilLetter)
-            docLetter.sprite = currentNPC.councilLetterImage;
 
         // Habilitar el resto de botones una vez vistos los documentos
         infoButton.interactable = true;
@@ -249,7 +242,6 @@ public class GameManager : MonoBehaviour
             photoToggle.isOn = false;
             nameToggle.isOn = false;
             nationalityToggle.isOn = false;
-            letterToggle.isOn = false;
         }
         approveButton.interactable = true;
         denyButton.interactable = true;
@@ -274,7 +266,6 @@ public class GameManager : MonoBehaviour
         if (photoToggle.isOn == currentNPC.photoIsCorrect) correctAnswers++; else wrongAnswers++;
         if (nameToggle.isOn == currentNPC.nameIsCorrect) correctAnswers++; else wrongAnswers++;
         if (nationalityToggle.isOn == currentNPC.nationalityIsValid) correctAnswers++; else wrongAnswers++;
-        if (letterToggle.isOn == currentNPC.councilLetterIsPresent) correctAnswers++; else wrongAnswers++;
 
     // CÁLCULO DE PUNTOS: +10 por correcto, -5 por error
         int pointsGained = correctAnswers * 10;
@@ -346,7 +337,7 @@ private IEnumerator ShowFeedbackCoroutine(string message, AudioClip soundClip)
         bool shouldPass = 
         currentNPC.nameIsCorrect &&                  // Nombre correcto
         currentNPC.nationalityIsValid &&             // Nacionalidad válida
-        (currentNPC.photoIsCorrect || currentNPC.councilLetterIsPresent);  // Foto OK o tiene carta
+        (currentNPC.photoIsCorrect);  // Foto OK o tiene carta
 
         // ¿La decisión del jugador fue la correcta?
         bool correctDecision = (approved && shouldPass) || (!approved && !shouldPass);

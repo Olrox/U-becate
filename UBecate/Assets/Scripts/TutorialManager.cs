@@ -84,32 +84,32 @@ public class TutorialManager : MonoBehaviour
         // Diálogo inicial
         dialogoInicial = new DialogueStep[]
         {
-            new DialogueStep("Goyo", "¡Bienvenido a tu misión!"),
+            new DialogueStep("Bequín", "¡Bienvenido a tu misión!"),
             new DialogueStep("Tú", "Dónde me llevaste, espera, ¿Por qué estoy trabajando en una ventanilla? y más importante ¿Por qué estoy existiendo en 2D?"),
-            new DialogueStep("Goyo", "Te acabo de preparar una simulación dibujada por mí y para que quedarás a juego con ella, te acabo de redimensionar. ¿Actualmente estás viendo la vida como yo la veo, una gran diferencia a tu cuarto, no es así?"),
+            new DialogueStep("Bequín", "Te acabo de preparar una simulación dibujada por mí y para que quedarás a juego con ella, te acabo de redimensionar. ¿Actualmente estás viendo la vida como yo la veo, una gran diferencia a tu cuarto, no es así?"),
             new DialogueStep("Tú","¿Estás diciendo que mi cuarto se veía aburrido y sin color? Dejame decirte que mi casa tiene un árbol completamente verde y me tardé mucho en pintarlo."),
-            new DialogueStep("Goyo", "¡¿Pintaste tu el árbol?! Wow, yo que pensé que era un error de la programac… En fin ese tampoco es el caso, te explicaré cómo realizar el trabajo.")
+            new DialogueStep("Bequín", "¡¿Pintaste tu el árbol?! Wow, yo que pensé que era un error de la programac… En fin ese tampoco es el caso, te explicaré cómo realizar el trabajo.")
         };
 
         // Pasos del tutorial
         steps = new TutorialStep[]
         {
-            new TutorialStep("Goyo","Es muy importante saber que, para dar información para algún proceso, los datos deben estar actualizados y conforme lo establecido en la convocatoria.", null, null, false),
-            new TutorialStep("Goyo","Los diversos personajes que dibujé presentarán sus datos en nuestro escritorio.", 
+            new TutorialStep("Bequín","Es muy importante saber que, para dar información para algún proceso, los datos deben estar actualizados y conforme lo establecido en la convocatoria.", null, null, false),
+            new TutorialStep("Bequín","Los diversos personajes que dibujé presentarán sus datos en nuestro escritorio.", 
                              documentsButton?.gameObject, documentPanel, false),
-            new TutorialStep("Goyo","Deberás corroborar que sus nombres estén iguales a como los tenemos en la pantalla.", 
+            new TutorialStep("Bequín","Deberás corroborar que sus nombres estén iguales a como los tenemos en la pantalla.", 
                              infoButton?.gameObject, infoPanel, false),
-            new TutorialStep("Goyo","Usa las 'anotaciones' para marcar AFIRMATIVAMENTE los puntos que cumplen correctamente con el trámite revisaste.", 
+            new TutorialStep("Bequín","Usa las 'anotaciones' para marcar AFIRMATIVAMENTE los puntos que cumplen correctamente con el trámite revisaste.", 
                              checklistButton?.gameObject, checklistPanel, false),
-            new TutorialStep("Goyo","Además de que el estado de cuenta será en el formato que tenemos pegado del lado derecho de la ventanilla, para verlo solo necesitas picar sobre mi dibujo que tiene un banco y dinero.", 
+            new TutorialStep("Bequín","Además de que el estado de cuenta será en el formato que tenemos pegado del lado derecho de la ventanilla, para verlo solo necesitas picar sobre mi dibujo que tiene un banco y dinero.", 
                              BancoInfoButton?.gameObject, BancoInfoPanel, false),
-            new TutorialStep("Goyo","Algunos personajes se presentarán por sus nietos o hijos, es importante que revises que traigan una carta poder para que ellos puedan seguir con el trámite.", 
+            new TutorialStep("Bequín","Recuerda, tienes que estar muy pendiente a los datos que te entreguen.", 
                              documentsButton?.gameObject, documentPanel, false),
-            new TutorialStep("Goyo","El botón VERDE es para confirmar que está todo en orden y puede continuar con el trámite.", 
+            new TutorialStep("Bequín","El botón VERDE es para confirmar que está todo en orden y puede continuar con el trámite.", 
                              approveButton?.gameObject, null, false),
-            new TutorialStep("Goyo","El botón ROJO es para marcar que hay un error en los requisitos presentados.", 
+            new TutorialStep("Bequín","El botón ROJO es para marcar que hay un error en los requisitos presentados.", 
                              denyButton?.gameObject, null, false),                                                   
-            new TutorialStep("Goyo","¡Ya conoces todos los botones! ¿Estás listo? \n**Verde** → continuar al siguiente nivel \n**Rojo** → repetir las instrucciones", 
+            new TutorialStep("Bequín","¡Ya conoces todos los botones! ¿Estás listo? \n**Verde** → continuar al siguiente nivel \n**Rojo** → repetir las instrucciones", 
                              null, null, true),  // ← AQUÍ está el cambio: true en vez de omitir el parámetro
         };
     }
