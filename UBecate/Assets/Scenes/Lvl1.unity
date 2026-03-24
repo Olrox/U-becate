@@ -24663,7 +24663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelInstruccion: {fileID: 1583223303}
   VelCamina: 8
-  sensibilidadMouse: 13
+  sensibilidadMouse: 7
 --- !u!4 &926547963
 Transform:
   m_ObjectHideFlags: 0

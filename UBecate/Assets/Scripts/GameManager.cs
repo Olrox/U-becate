@@ -99,6 +99,11 @@ public class GameManager : MonoBehaviour
     public AudioClip submitSound;              // Opcional: sonido general de submit
     public AudioClip checkSound;
 
+    [Header("Audio - Paneles Finales")]
+    public AudioSource audioSourceFinales;     // AudioSource dedicado para victoria/derrota
+    public AudioClip audioVictoria;
+    public AudioClip audioDerrota;
+
     [Header("Feedback simple al salir cada NPC")]
     public GameObject dialogePanel;           // Panel que contiene el texto (desactívalo al inicio)
     public TextMeshProUGUI dialogeText;       // El TextMeshPro dentro del panel
@@ -139,6 +144,22 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("¡Todos los NPCs terminados! → Victoria");
             victoryPanel.SetActive(true);
+
+            // Deshabilita el botón hasta que termine el audio
+            if (nextLvlButton != null) nextLvlButton.interactable = false;
+
+            if (audioSourceFinales != null && audioVictoria != null)
+            {
+                audioSourceFinales.clip = audioVictoria;
+                audioSourceFinales.Play();
+                StartCoroutine(HabilitarBotonAlTerminarAudio());
+            }
+            else
+            {
+                // Si no hay audio asignado, habilita el botón directamente
+                if (nextLvlButton != null) nextLvlButton.interactable = true;
+            }
+
             yield break;
         }
 
@@ -266,6 +287,7 @@ public class GameManager : MonoBehaviour
         if (photoToggle.isOn == currentNPC.photoIsCorrect) correctAnswers++; else wrongAnswers++;
         if (nameToggle.isOn == currentNPC.nameIsCorrect) correctAnswers++; else wrongAnswers++;
         if (nationalityToggle.isOn == currentNPC.nationalityIsValid) correctAnswers++; else wrongAnswers++;
+        // Carta del concilio eliminada — ya no afecta al puntaje
 
     // CÁLCULO DE PUNTOS: +10 por correcto, -5 por error
         int pointsGained = correctAnswers * 10;
@@ -274,10 +296,9 @@ public class GameManager : MonoBehaviour
 
         score += totalChange;
 
-    // MENSAJE DE FEEDBACK
-        string feedbackMsg = $"{correctAnswers}/4 correctas!\n{pointsGained} pts ganados - {pointsLost} pts perdidos\nTotal: {(totalChange >= 0 ? "+" : "")}{totalChange} pts";
-
-    // Mostrar feedback con sonido
+        // MENSAJE DE FEEDBACK
+        string feedbackMsg = $"{correctAnswers}/3 correctas!\n{pointsGained} pts ganados - {pointsLost} pts perdidos\nTotal: {(totalChange >= 0 ? "+" : "")}{totalChange} pts";
+        // Mostrar feedback con sonido
         StartCoroutine(ShowFeedbackCoroutine(feedbackMsg, correctAnswers > wrongAnswers ? correctSound : wrongSound));
 
         checklistSubmitted = true;
@@ -285,7 +306,7 @@ public class GameManager : MonoBehaviour
         checklistPanel.SetActive(false);
     }
 
-// 3. CORUTINA PARA MOSTRAR FEEDBACK CON ANIMACIÓN (fade in/out + sonido)
+    // 3. CORUTINA PARA MOSTRAR FEEDBACK CON ANIMACIÓN (fade in/out + sonido)
 
 private IEnumerator ShowFeedbackCoroutine(string message, AudioClip soundClip)
 {
@@ -414,6 +435,13 @@ private IEnumerator ShowFeedbackCoroutine(string message, AudioClip soundClip)
     {
         gameOverPanel.SetActive(true);
         DisableInteractionButtons();
+
+        // Audio de derrota
+        if (audioSourceFinales != null && audioDerrota != null)
+        {
+            audioSourceFinales.clip = audioDerrota;
+            audioSourceFinales.Play();
+        }
     }
 
     public void Restart()
@@ -443,6 +471,13 @@ private IEnumerator ShowFeedbackCoroutine(string message, AudioClip soundClip)
         checklistButton.interactable = false;
         approveButton.interactable = false;
         denyButton.interactable = false;
+    }
+
+    private IEnumerator HabilitarBotonAlTerminarAudio()
+    {
+        // Espera a que el AudioSource termine de reproducir
+        yield return new WaitUntil(() => !audioSourceFinales.isPlaying);
+        if (nextLvlButton != null) nextLvlButton.interactable = true;
     }
 
     private void UpdateScore()

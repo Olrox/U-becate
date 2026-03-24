@@ -2294,7 +2294,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bcfe3e9452babf74ba38f26227f18141, type: 3}
   audioClipTitilante: {fileID: 8300000, guid: 40fd1bd589d240b4390a7a31c5ddf2fd, type: 3}
   imagenPersonaje: {fileID: 951116764}
-  retratos: []
+  retratos:
+  - nombrePersonaje: Yo
+    retrato: {fileID: -2031693626, guid: 68c2125f35fd05349a2a87dc973e149e, type: 3}
   retratoVacio: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   imagenTitilante: {fileID: 510936071}
   titilosCount: 2
