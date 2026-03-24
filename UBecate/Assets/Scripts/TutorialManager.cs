@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
+    [Header("Audio - Diálogos")]
+    public AudioSource audioSourceBequin;
+    public AudioClip[] audioClipsBequin;        // Clips en orden de aparición de Bequín
+    private int indiceBequin = 0;
+    
     [Header("Paneles del Tutorial")]
     public GameObject tutorialOverlay;     // Panel semi-transparente que cubre todo
     public GameObject tooltipPanel;        // Panel flotante con texto + flecha/highlight
@@ -41,8 +46,6 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Transición")]
     public string siguienteNivel = "Lvl2";
-
-    private int currentStep = 0;
 
     [System.Serializable]
     private class DialogueStep
@@ -84,7 +87,7 @@ public class TutorialManager : MonoBehaviour
         // Diálogo inicial
         dialogoInicial = new DialogueStep[]
         {
-            new DialogueStep("Bequín", "¡Bienvenido a tu misión!"),
+            new DialogueStep("Bequín", "¡ Acabas de ingresar a tu misión!."),
             new DialogueStep("Tú", "Dónde me llevaste, espera, ¿Por qué estoy trabajando en una ventanilla? y más importante ¿Por qué estoy existiendo en 2D?"),
             new DialogueStep("Bequín", "Te acabo de preparar una simulación dibujada por mí y para que quedarás a juego con ella, te acabo de redimensionar. ¿Actualmente estás viendo la vida como yo la veo, una gran diferencia a tu cuarto, no es así?"),
             new DialogueStep("Tú","¿Estás diciendo que mi cuarto se veía aburrido y sin color? Dejame decirte que mi casa tiene un árbol completamente verde y me tardé mucho en pintarlo."),
@@ -109,7 +112,7 @@ public class TutorialManager : MonoBehaviour
                              approveButton?.gameObject, null, false),
             new TutorialStep("Bequín","El botón ROJO es para marcar que hay un error en los requisitos presentados.", 
                              denyButton?.gameObject, null, false),                                                   
-            new TutorialStep("Bequín","¡Ya conoces todos los botones! ¿Estás listo? \n**Verde** → continuar al siguiente nivel \n**Rojo** → repetir las instrucciones", 
+            new TutorialStep("Bequín","¿Estas listo o quisieras que vuelva a explicar las instrucciones? \n**Verde** → continuar al siguiente nivel \n**Rojo** → repetir las instrucciones", 
                              null, null, true),  // ← AQUÍ está el cambio: true en vez de omitir el parámetro
         };
     }
@@ -151,6 +154,15 @@ public class TutorialManager : MonoBehaviour
                 speakerNameText.gameObject.SetActive(true);
             }
 
+            if (dialogo.nombreHablante == "Bequín" && audioSourceBequin != null &&
+            audioClipsBequin != null && indiceBequin < audioClipsBequin.Length)
+            {
+                audioSourceBequin.Stop();
+                audioSourceBequin.clip = audioClipsBequin[indiceBequin];
+                audioSourceBequin.Play();
+                indiceBequin++;
+            }
+
             // Mostrar texto del diálogo
             tooltipText.text = dialogo.texto;
 
@@ -169,6 +181,16 @@ public class TutorialManager : MonoBehaviour
             speakerNameText.text = step.nombreHablante;
             speakerNameText.gameObject.SetActive(true);
         }
+
+        if (step.nombreHablante == "Bequín" && audioSourceBequin != null &&
+        audioClipsBequin != null && indiceBequin < audioClipsBequin.Length)
+        {
+            audioSourceBequin.Stop();
+            audioSourceBequin.clip = audioClipsBequin[indiceBequin];
+            audioSourceBequin.Play();
+            indiceBequin++;
+        }
+
 
         tooltipText.text = step.texto;
 
@@ -331,8 +353,32 @@ public class TutorialManager : MonoBehaviour
 
     void RepetirTutorial()
     {
-        // Reiniciar la escena actual para repetir el tutorial
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StopAllCoroutines();
+
+        // Resetear estado
+        indiceBequin = 3;
+
+        // Cerrar paneles abiertos
+        CerrarTodosPaneles();
+        if (clickToClosePanel != null) clickToClosePanel.SetActive(false);
+
+        // Resetear botones del juego
+        DeshabilitarBotonesJuego();
+        btnNextStep.interactable = true;
+
+        // Volver a arrancar solo desde los TutorialSteps (sin diálogo inicial)
+        StartCoroutine(ReanudarDesdeSteps());
+    }
+
+    IEnumerator ReanudarDesdeSteps()
+    {
+        if (tutorialOverlay != null) tutorialOverlay.SetActive(true);
+        if (tooltipPanel != null) tooltipPanel.SetActive(true);
+
+        foreach (var step in steps)
+        {
+            yield return StartCoroutine(ShowStep(step));
+        }
     }
 
     void IrASiguienteNivel()

@@ -410,6 +410,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116617232}
   m_CullTransparentMesh: 1
+--- !u!1 &123580328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123580329}
+  - component: {fileID: 123580330}
+  m_Layer: 5
+  m_Name: BequinAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &123580329
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123580328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2088119962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &123580330
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123580328}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &259943895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 403.5584, y: -52}
+  m_AnchoredPosition: {x: -464.80743, y: 64.975296}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &905343823
@@ -1372,6 +1504,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &951116761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951116762}
+  - component: {fileID: 951116765}
+  - component: {fileID: 951116764}
+  - component: {fileID: 951116763}
+  m_Layer: 5
+  m_Name: PersonajesIma (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &951116762
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951116761}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2088119962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 434.13266, y: 190.18819}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &951116763
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951116761}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &951116764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951116761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &951116765
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951116761}
+  m_CullTransparentMesh: 1
 --- !u!1 &1033130780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -111, y: 173.9267}
+  m_AnchoredPosition: {x: -111, y: 476.26596}
   m_SizeDelta: {x: 206.5, y: 59.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1391127721
@@ -1886,7 +2106,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4bdc23304cccddb43aea6953fb26ded0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2020,30 +2240,62 @@ MonoBehaviour:
   dialogeText: {fileID: 753644729}
   nameText: {fileID: 1854684664}
   dialogueLines:
-  - speakerName: Goyo
+  - speakerName: "Bequ\xEDn"
     lineText: "Hola de nuevo, \xBFte acuerdas de m\xED?"
+    audioNarrado: {fileID: 8300000, guid: 058e7c3677a55da43aa6f970fe4cd153, type: 3}
+    imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   - speakerName: Yo
     lineText: "Claro que s\xED, \xBFhe sido seleccionado para recibir una beca?"
-  - speakerName: Goyo
+    audioNarrado: {fileID: 0}
+    imagenPersonaje: {fileID: 0}
+  - speakerName: "Bequ\xEDn"
     lineText: "As\xED es."
+    audioNarrado: {fileID: 8300000, guid: 3d440a7f276b9dc46b1dc28cf8c275a7, type: 3}
+    imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   - speakerName: Yo
     lineText: "\xBFPor qu\xE9 acabo de ver un aviso en mi cabeza?"
-  - speakerName: Goyo
+    audioNarrado: {fileID: 0}
+    imagenPersonaje: {fileID: 0}
+  - speakerName: "Bequ\xEDn"
     lineText: La magia del cine.
+    audioNarrado: {fileID: 8300000, guid: 40fd1bd589d240b4390a7a31c5ddf2fd, type: 3}
+    imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   - speakerName: Yo
     lineText: "\u2026Bueno, \xBFahora qu\xE9 hago?"
-  - speakerName: Goyo
+    audioNarrado: {fileID: 0}
+    imagenPersonaje: {fileID: 0}
+  - speakerName: "Bequ\xEDn"
     lineText: "Sigue las instrucciones brindadas al momento de ser aceptado, en este
       caso tu tendr\xE1s que ir de manera presencial a pasar tus datos y tu ESTADO
       DE CUENTA bancaria al igual que subir tu estado de cuenta en l\xEDnea."
-  - speakerName: Goyo
+    audioNarrado: {fileID: 8300000, guid: 40fd1bd589d240b4390a7a31c5ddf2fd, type: 3}
+    imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
+  - speakerName: "Bequ\xEDn"
     lineText: "As\xED que a continuaci\xF3n, adjunta tu ESTADO DE CUENTA como PDF"
-  - speakerName: Goyo
+    audioNarrado: {fileID: 8300000, guid: 366318070884f9e4d89c6dbb0d22b2af, type: 3}
+    imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
+  - speakerName: "Bequ\xEDn"
     lineText: "Muy bien, ahora me ayudar\xE1s con un trabajo."
+    audioNarrado: {fileID: 8300000, guid: c575671cddce8c64b824457fa0d5d558, type: 3}
+    imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   - speakerName: Yo
     lineText: "\xA1Espera, eso no estaba en el contratoooo!"
+    audioNarrado: {fileID: 0}
+    imagenPersonaje: {fileID: 0}
   textSpeed: 0.07
   defaultLineWaitTime: 2
+  "audioSourceBequ\xEDn": {fileID: 123580330}
+  audioClipsBequin:
+  - {fileID: 8300000, guid: 058e7c3677a55da43aa6f970fe4cd153, type: 3}
+  - {fileID: 8300000, guid: 3d440a7f276b9dc46b1dc28cf8c275a7, type: 3}
+  - {fileID: 8300000, guid: 366318070884f9e4d89c6dbb0d22b2af, type: 3}
+  - {fileID: 8300000, guid: b0c1c52a58ba0e046b201f2ea0e9752c, type: 3}
+  - {fileID: 8300000, guid: 4379951f8357530499de0b5f60410990, type: 3}
+  - {fileID: 8300000, guid: bcfe3e9452babf74ba38f26227f18141, type: 3}
+  audioClipTitilante: {fileID: 8300000, guid: 40fd1bd589d240b4390a7a31c5ddf2fd, type: 3}
+  imagenPersonaje: {fileID: 951116764}
+  retratos: []
+  retratoVacio: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   imagenTitilante: {fileID: 510936071}
   titilosCount: 2
   titiloDuration: 0.7
@@ -2532,6 +2784,8 @@ RectTransform:
   - {fileID: 71671076}
   - {fileID: 510936072}
   - {fileID: 1393813365}
+  - {fileID: 951116762}
+  - {fileID: 123580329}
   m_Father: {fileID: 1874690866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}

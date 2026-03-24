@@ -170,14 +170,15 @@ public class IntroManager : MonoBehaviour
     private void FinalizarYEsperarDecision()
     {
         dialogoTerminado = true;
-        
-        // Apagamos el panel de clics para que no estorbe a los botones
-        if(panelInteraccionClick != null) panelInteraccionClick.SetActive(false);
-        
-        // Mostramos los botones
+
+        if (panelInteraccionClick != null) panelInteraccionClick.SetActive(false);
+
+        // Garantiza que el contenedor permanezca activo
+        if (panelContenedorDialogo != null) panelContenedorDialogo.SetActive(true);
+
         SetDecisionButtonsActive(true);
 
-        // Hacemos que el personaje se vaya si quieres, pero NO apagamos el panelContenedorDialogo
+        // Solo fade del personaje, sin tocar el contenedor
         if (usarFadePersonajes && canvasGroupPersonaje != null)
             StartCoroutine(FadeOutPersonaje());
     }
@@ -243,12 +244,28 @@ public class IntroManager : MonoBehaviour
 
     IEnumerator NegacionSequence()
     {
+        // Oculta botones y garantiza que el contenedor siga visible
         SetDecisionButtonsActive(false);
+        if (panelContenedorDialogo != null) panelContenedorDialogo.SetActive(true);
+
+        // Muestra nombre vacío y escribe el texto de negación letra por letra
         if (nameText != null) nameText.text = "";
-        
         yield return StartCoroutine(TypeText(negacionText));
+
+        // Reproduce audio de negación si existe
+        if (audioNegacion != null && audioSource != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = audioNegacion;
+            audioSource.Play();
+        }
+
+        // Espera antes de volver al menú
         yield return new WaitForSeconds(reloadDelay);
-        
+
+        // Cierra el contenedor antes de salir
+        if (panelContenedorDialogo != null) panelContenedorDialogo.SetActive(false);
+
         if (menuManager != null) menuManager.VolverAlMenu();
         else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
