@@ -302,6 +302,7 @@ MonoBehaviour:
   - "Dise\xF1o del juego: \nItseni Solares Jacobo."
   - "Desarrollo: \nItseni Solares Jacobo  \nIsrael Raymundo V\xE1zquez."
   - " Arte: \nItseni Solares Jacobo\nIsrael Raymundo V\xE1zquez."
+  - "Voz: \nBequ\xEDn como Bequ\xEDn."
   - "Narrativa: \nItseni Solares Jacobo."
   - "Programaci\xF3n: \nIsrael Raymundo V\xE1zquez."
   velocidadNormal: 100
@@ -1834,8 +1835,8 @@ MonoBehaviour:
   dialogueLines:
   - speakerName: Yo
     lineText: "Mis amistades de la universidad me platicaron que actualmente hay
-      convocatorias para buscar becas, sin embargo, no tengo la menor idea de c\xF3mo
-      solicitar una, ojal\xE1 tuviera ayuda para realizar este tr\xE1mite."
+      convocatorias para buscar becas; Sin embargo, no tengo la menor idea de c\xF3mo
+      solicitar una.Ojal\xE1 tuviera ayuda para realizar este tr\xE1mite."
     audioNarrado: {fileID: 0}
     imagenPersonaje: {fileID: 873761685, guid: 68c2125f35fd05349a2a87dc973e149e, type: 3}
   - speakerName: ???
@@ -1879,9 +1880,9 @@ MonoBehaviour:
   botonesDecision:
   - {fileID: 1921299457}
   - {fileID: 919066606}
-  negacionText: "Entiendo ser\xE1 para la pr\xF3xima ocasi\xF3n, recuerda estar atento
-    a https://www.becarios.unam.mx/ dond\xE9 podr\xE1s encontrar informaci\xF3n para
-    cuando decidas solicitar una beca."
+  negacionText: "Entiendo, ser\xE1 para la pr\xF3xima ocasi\xF3n. Recuerda estar
+    atento a https://www.becarios.unam.mx/ donde podr\xE1s encontrar informaci\xF3n
+    para cuando decidas solicitar una beca."
   audioNegacion: {fileID: 8300000, guid: baad5dd5ac9ee524e80e96deb24dba65, type: 3}
   reloadDelay: 3
 --- !u!1 &581400150

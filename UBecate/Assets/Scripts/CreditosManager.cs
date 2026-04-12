@@ -40,7 +40,7 @@ public class CreditosManager : MonoBehaviour
         if (botonAcelerarCreditos != null)
             botonAcelerarCreditos.gameObject.SetActive(true);
 
-        for (int i = 0; i < lineasCreditos.Length && i < 5; i++)
+        for (int i = 0; i < lineasCreditos.Length && i < 6; i++)
         {
             yield return StartCoroutine(MostrarLineaCredito(lineasCreditos[i]));
             
