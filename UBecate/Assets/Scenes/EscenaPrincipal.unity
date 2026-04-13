@@ -1518,8 +1518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 268.5512}
-  m_SizeDelta: {x: 288.2361, y: 151.98}
+  m_AnchoredPosition: {x: -530, y: -190}
+  m_SizeDelta: {x: 250.14, y: 151.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &484854734
 MonoBehaviour:
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   - speakerName: Yo
     lineText: "Mis amistades de la universidad me platicaron que actualmente hay
       convocatorias para buscar becas; Sin embargo, no tengo la menor idea de c\xF3mo
-      solicitar una.Ojal\xE1 tuviera ayuda para realizar este tr\xE1mite."
+      solicitar una. Ojal\xE1 tuviera ayuda para realizar este tr\xE1mite."
     audioNarrado: {fileID: 0}
     imagenPersonaje: {fileID: 873761685, guid: 68c2125f35fd05349a2a87dc973e149e, type: 3}
   - speakerName: ???
@@ -1858,8 +1858,8 @@ MonoBehaviour:
     audioNarrado: {fileID: 0}
     imagenPersonaje: {fileID: 873761685, guid: 68c2125f35fd05349a2a87dc973e149e, type: 3}
   - speakerName: "Bequ\xEDn"
-    lineText: " Eso no es lo importante. \xBFTe interesar\xEDa tener un apoyo para
-      continuar con tu vida de estudiante?"
+    lineText: "Eso no es lo importante. \xBFTe interesar\xEDa tener un apoyo para
+      continuar con tu vida de estudiante?."
     audioNarrado: {fileID: 8300000, guid: b9e3371b95a53d14786cffc2d90e752f, type: 3}
     imagenPersonaje: {fileID: 21300000, guid: 2bcc3174402c0e34db0c6d2b8060231b, type: 3}
   - speakerName: Yo
@@ -1872,7 +1872,7 @@ MonoBehaviour:
     imagenPersonaje: {fileID: 873761685, guid: 68c2125f35fd05349a2a87dc973e149e, type: 3}
   textSpeed: 0.075
   audioSource: {fileID: 992558983}
-  permitirSaltarAudio: 1
+  permitirSaltarAudio: 0
   imagenPersonajeUI: {fileID: 1859286464}
   panelImagenPersonaje: {fileID: 1219573522}
   usarFadePersonajes: 1
@@ -2286,9 +2286,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Este juego NO es el registro de una beca, es una simulaci\xF3n para conocer
-    el procedimiento para solicitar una beca, es importante y tu obligaci\xF3n, leer
-    la convocatoria de la beca de tu inter\xE9s, para realizar tu tr\xE1mite, recuerda
+  m_text: "Este juego NO es el registro de una beca; es una simulaci\xF3n para conocer
+    el procedimiento para solicitar una beca. Es importante y tu obligaci\xF3n, leer
+    la convocatoria de la beca de tu inter\xE9s, para realizar tu tr\xE1mite. Recuerda
     que las plataformas oficiales son Becarios UNAM y el portal de INTEGRA, \xA1evita
     caer en fraude!"
   m_isRightToLeft: 0
@@ -6016,8 +6016,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209, y: 158.86928}
-  m_SizeDelta: {x: 451.2826, y: 151.98}
+  m_AnchoredPosition: {x: -209, y: 200}
+  m_SizeDelta: {x: 573.3, y: 232.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791534525
 MonoBehaviour:

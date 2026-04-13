@@ -188,8 +188,8 @@ public class NivelImagenesManager : MonoBehaviour
 
         DialogoNarrador[] dialogos = new DialogoNarrador[]
         {
-            new DialogoNarrador("Bequín", "Es hora de crear tu perfil en INTEGRA, es importante pensar que cuando llenes el formulario, tendrás que validar que tus datos sean correctos."),
-            new DialogoNarrador("Bequín", "Es importante que en caso de corrección de nombre y/o género validez que esos datos se encuentren en el DGAE, antes de registrarte con la nueva información, una vez terminado, picar a registrar."),
+            new DialogoNarrador("Bequín", "Es hora de crear tu perfil en INTEGRA. Es importante pensar que, cuando llenes el formulario, tendrás que validar que tus datos sean correctos."),
+            new DialogoNarrador("Bequín", "Es importante que en caso de corrección de nombre y/o género, validez que esos datos se encuentren en el DGAE, antes de registrarte con la nueva información. Una vez terminado, picar a registrar."),
             new DialogoNarrador("Bequín", "Para esta parte la llenaré por ti, pero recuerda que fuera de este juego lo deberás de llenar con tu información real."),
             new DialogoNarrador("Yo", "Espera, ¿Estamos en un juego?")
         };
@@ -223,8 +223,8 @@ public class NivelImagenesManager : MonoBehaviour
         DialogoNarrador[] dialogosAntes = new DialogoNarrador[]
         {
             new DialogoNarrador("Bequín", "Ahora que ya estamos dentro del portal y tenemos nuestro usuario, procederemos a iniciar sesión."),
-            new DialogoNarrador("Yo", "La verdad ya me cansé, me gustaría terminar este proceso más tarde."),
-            new DialogoNarrador("Bequín", "¡De acuerdo! Es posible retomar el proceso, sin embargo, no es recomendable dejarlo para los últimos días debido a que puede saturarse el portal o ya no entrar la respuesta por fallos en el sistema.")
+            new DialogoNarrador("Yo", "La verdad, ya me cansé. Me gustaría terminar este proceso más tarde."),
+            new DialogoNarrador("Bequín", "¡De acuerdo! Es posible retomar el proceso; sin embargo, no es recomendable dejarlo para los últimos días debido a que puede saturarse el portal o ya no entrar la respuesta por fallos en el sistema.")
         };
 
         yield return StartCoroutine(MostrarDialogos(dialogosAntes, panelDialogo, textoDialogo, nombreNarradorText));
@@ -233,7 +233,7 @@ public class NivelImagenesManager : MonoBehaviour
 
         DialogoNarrador[] dialogosDespues = new DialogoNarrador[]
         {
-            new DialogoNarrador("Yo", "Ya descanse, sigamos con el proceso de registro."),
+            new DialogoNarrador("Yo", "Ya descansé, sigamos con el proceso de registro."),
             new DialogoNarrador("Bequín", "¡Excelente! Sigamos adelante...")
         };
 
@@ -258,7 +258,7 @@ public class NivelImagenesManager : MonoBehaviour
     {
         DialogoNarrador[] dialogos = new DialogoNarrador[]
         {
-            new DialogoNarrador("Bequín", "Una vez dentro iremos a solicitud")
+            new DialogoNarrador("Bequín", "Una vez dentro iremos a 'Solicitudes'")
         };
 
         yield return StartCoroutine(MostrarDialogos(dialogos, panelDialogo, textoDialogo, nombreNarradorText));

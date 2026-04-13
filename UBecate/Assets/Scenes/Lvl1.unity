@@ -23674,7 +23674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ahora que tienes tus requisitos, a cu\xE1l beca puedes aplicar."
+  m_text: "Ahora que tienes tus requisitos, \xBFA cu\xE1l beca puedes aplicar?."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27437,10 +27437,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Esta bien, pero te dar\xE9 un tip, puedes solicitar la beca hasta el d\xEDa
-    l\xEDmite de registro, sin embargo, \xA1siempre puede pasar que alg\xFAn imprevisto
-    surja y que no se pueda completar tu registro, siempre es mejor iniciar el tr\xE1mite
-    cuanto antes!"
+  m_text: "Est\xE1 bien, pero te dar\xE9 un tip: puedes solicitar la beca hasta el
+    d\xEDa l\xEDmite de registro, sin embargo. \xA1Siempre puede pasar que alg\xFAn
+    imprevisto surja y que no se pueda completar tu registro, siempre es mejor iniciar
+    el tr\xE1mite cuanto antes!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28690,9 +28690,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Perfecto, a esta beca si puedo aplicar. Es momento de releer la convocatoria
-    para conocer las restricciones y compatibilidades, si bien, no tengo otra beca,
-    si en el futuro quisiera otra beca, deber\xEDa estar al tanto.\r\n"
+  m_text: "Perfecto, a esta beca s\xED puedo aplicar. Es momento de releer la convocatoria
+    para conocer las restricciones y compatibilidades. Si bien, no tengo otra beca,
+    si en el futuro quisiera otra beca, deber\xEDa estar al tanto."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -48616,7 +48616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28439a8fbe3b2df4b84c3d432b4827be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02612658e42caed41b87ccc14df81bc7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

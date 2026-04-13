@@ -88,10 +88,10 @@ public class TutorialManager : MonoBehaviour
         dialogoInicial = new DialogueStep[]
         {
             new DialogueStep("Bequín", "¡ Acabas de ingresar a tu misión!."),
-            new DialogueStep("Tú", "Dónde me llevaste, espera, ¿Por qué estoy trabajando en una ventanilla? y más importante ¿Por qué estoy existiendo en 2D?"),
+            new DialogueStep("Tú", "¿Dónde me llevaste? Espera… ¿Por qué estoy trabajando en una ventanilla? y, más importante, ¿Por qué estoy existiendo en 2D?"),
             new DialogueStep("Bequín", "Te acabo de preparar una simulación dibujada por mí y para que quedarás a juego con ella, te acabo de redimensionar. ¿Actualmente estás viendo la vida como yo la veo, una gran diferencia a tu cuarto, no es así?"),
-            new DialogueStep("Tú","¿Estás diciendo que mi cuarto se veía aburrido y sin color? Dejame decirte que mi casa tiene un árbol completamente verde y me tardé mucho en pintarlo."),
-            new DialogueStep("Bequín", "¡¿Pintaste tu el árbol?! Wow, yo que pensé que era un error de la programac… En fin ese tampoco es el caso, te explicaré cómo realizar el trabajo.")
+            new DialogueStep("Tú","¿Estás diciendo que mi cuarto se veía aburrido y sin color? Déjame decirte que mi casa tiene un árbol completamente verde y me tardé mucho en pintarlo."),
+            new DialogueStep("Bequín", "¡¿Pintaste tu el árbol?! Wow, yo que pensé que era un error de la programación... En fin, ese tampoco es el caso. Te explicaré cómo realizar el trabajo.")
         };
 
         // Pasos del tutorial
@@ -104,7 +104,7 @@ public class TutorialManager : MonoBehaviour
                              infoButton?.gameObject, infoPanel, false),
             new TutorialStep("Bequín","Usa las 'anotaciones' para marcar AFIRMATIVAMENTE los puntos que cumplen correctamente con el trámite revisaste.", 
                              checklistButton?.gameObject, checklistPanel, false),
-            new TutorialStep("Bequín","Además de que el estado de cuenta será en el formato que tenemos pegado del lado derecho de la ventanilla, para verlo solo necesitas picar sobre mi dibujo que tiene un banco y dinero.", 
+            new TutorialStep("Bequín","Además de que el estado de cuenta será en el formato que tenemos pegado del lado derecho de la ventanilla. Para verlo solo necesitas picar sobre mi dibujo que tiene un banco y dinero.", 
                              BancoInfoButton?.gameObject, BancoInfoPanel, false),
             new TutorialStep("Bequín","Recuerda, tienes que estar muy pendiente a los datos que te entreguen.", 
                              documentsButton?.gameObject, documentPanel, false),
@@ -112,7 +112,7 @@ public class TutorialManager : MonoBehaviour
                              approveButton?.gameObject, null, false),
             new TutorialStep("Bequín","El botón ROJO es para marcar que hay un error en los requisitos presentados.", 
                              denyButton?.gameObject, null, false),                                                   
-            new TutorialStep("Bequín","¿Estas listo o quisieras que vuelva a explicar las instrucciones? \n**Verde** → continuar al siguiente nivel \n**Rojo** → repetir las instrucciones", 
+            new TutorialStep("Bequín","¿Estás listo o quisieras que vuelva a explicar las instrucciones? \n**Verde** → continuar al siguiente nivel \n**Rojo** → repetir las instrucciones", 
                              null, null, true),  // ← AQUÍ está el cambio: true en vez de omitir el parámetro
         };
     }

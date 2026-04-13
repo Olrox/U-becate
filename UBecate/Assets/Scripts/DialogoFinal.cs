@@ -57,7 +57,7 @@ public class DialogoFinal : MonoBehaviour
         // Configura tus diálogos aquí
         dialogos = new Dialogo[]
         {
-            new Dialogo("Yo", "Han pasado algunas semanas y he estado revisando de manera constante el portal de INTEGRA para conocer el estatus de mi beca.", false, false),
+            new Dialogo("Yo", "Han pasado algunas semanas y he estado revisando constantementede manera constante el portal de INTEGRA para conocer el estatus de mi beca. M, mi pago único de beca debería caer el día de hoy", false, false),
             new Dialogo("Yo", "Mi pago único de beca debería caer el día de hoy.", true, false), // Reproduce sonido después
             new Dialogo("Yo", "¡YA CAYÓ LA BECA!", false, true), // Reproduce música después
             new Dialogo("Yo", "¡Gracias compañero!", false, false)
