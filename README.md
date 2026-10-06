@@ -1,7 +1,7 @@
 # U-becate
 **Integrantes:** 
 
-* Israel Raymundo - Coder 
+* Israel Raymundo - Coder, ilustrador 2D, músico.
 * Itseni Solares Jacobo - Manager, ilustradora 2D, diseño de nivel, diseñadora educativa.
 
 **Proyecto para servicio social para carrera de pedagogía en Filosofía y Letras**
