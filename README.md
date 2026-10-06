@@ -6,11 +6,6 @@
 
 **Proyecto para servicio social de la carrera pedagogía en Filosofía y Letras UNAM**
 
-## **Introducción**
-
-U- becate es un videojuego educativo, cuyo propósito es acercar a la comunidad universitaria a conocer el proceso necesario para realizar su proceso de inscripción a las becas que ofrece la UNAM. Esto respondiendo a la problematica percibida por parte de la DGOAE al analizar los errores comunes  
-# Ubecate – Gamificación en Becas
-
 ## Introducción
 
 **Ubecate** es un videojuego educativo desarrollado como servicio social para la carrera de pedagogía en la Facultad de Filosfía y Letras de la UNAM (Universidad Nacional Autonoma de México) como una estrategia de gamificación para facilitar la comprensión del proceso de solicitud de becas universitarias en la UNAM. El proyecto busca transformar un trámite administrativo complejo en una experiencia interactiva que permita a los estudiantes familiarizarse con sus diferentes etapas y responsabilidades.
