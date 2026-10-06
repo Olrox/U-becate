@@ -31,11 +31,10 @@ Durante el juego, el usuario debe:
 - Consultar información relacionada con el Sistema INTEGRA y el Portal de Becarios UNAM.
 - Cambiar de rol entre solicitante y personal de ventanilla.
 
-La propuesta utiliza el aprendizaje experiencial y la gamificación para que los errores puedan identificarse dentro de un entorno seguro, relacionando las decisiones del jugador con diferentes consecuencias. :contentReference[oaicite:2]{index=2}
+La propuesta utiliza el aprendizaje experiencial y la gamificación para que los errores puedan identificarse dentro de un entorno seguro, relacionando las decisiones del jugador con diferentes consecuencias.
 
-El proyecto cuenta con un prototipo funcional que presenta una estructura secuencial, narrativa interactiva y actividades orientadas a reforzar la comprensión del procedimiento de solicitud de becas. :contentReference[oaicite:3]{index=3}
-
+El proyecto cuenta con un prototipo funcional que presenta una estructura secuencial, narrativa interactiva y actividades orientadas a reforzar la comprensión del procedimiento de solicitud de becas.
 ## Conclusión
 
-Ubecate demuestra el potencial de la gamificación como herramienta educativa para facilitar la comprensión de procesos administrativos complejos. Mediante la simulación, la toma de decisiones, el cambio de rol y la representación de errores comunes, el videojuego busca reducir la incertidumbre de los estudiantes y fomentar una mayor autonomía y responsabilidad durante la gestión de trámites de becas. :contentReference[oaicite:4]{index=4}
+Ubecate demuestra el potencial de la gamificación como herramienta educativa para facilitar la comprensión de procesos administrativos complejos. Mediante la simulación, la toma de decisiones, el cambio de rol y la representación de errores comunes, el videojuego busca reducir la incertidumbre de los estudiantes y fomentar una mayor autonomía y responsabilidad durante la gestión de trámites de becas. 
 
