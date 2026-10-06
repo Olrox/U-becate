@@ -4,7 +4,7 @@
 * Israel Raymundo - Coder, ilustrador 2D, músico, UI.
 * Itseni Solares Jacobo - Manager, ilustradora 2D, diseño de nivel, diseñadora educativa, UI.
 
-**Proyecto para servicio social para carrera de pedagogía en Filosofía y Letras**
+**Proyecto para servicio social de la carrera pedagogía en Filosofía y Letras UNAM**
 
 ## **Introducción**
 
