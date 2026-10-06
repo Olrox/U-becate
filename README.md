@@ -42,5 +42,19 @@ Ubecate demuestra el potencial de la gamificación como herramienta educativa pa
 ## Anexo: **Imagenes proyecto**
 
 <img width="1283" height="747" alt="Menú juego" src="https://github.com/user-attachments/assets/5fb00e21-c6a1-4550-89b8-2bbb3ffecf68" />
+<h3 align="center">Imagen Menú.</h3>
 
+<img width="1280" height="749" alt="Tutorial" src="https://github.com/user-attachments/assets/c896875f-f52c-4f85-b677-b423cd942003" />
 <h3 align="center">Imagen tutorial.</h3>
+
+<img width="1282" height="747" alt="Primer nivel" src="https://github.com/user-attachments/assets/43db22d2-272e-4e9a-8e32-9a13201f97be" />
+<h3 align="center">Primer nivel.</h3>
+
+<img width="1276" height="751" alt="ImG compu" src="https://github.com/user-attachments/assets/e3e6ffcf-0c9f-41c4-85a4-743144b0e67d" />
+<h3 align="center">Computadora.</h3>
+
+<img width="1284" height="736" alt="INTEGRA portal}" src="https://github.com/user-attachments/assets/3692ff63-6fab-4efe-9475-7ccc69f9dce3" />
+<h3 align="center">Integra portal.</h3>
+
+<img width="1276" height="749" alt="nivel 2" src="https://github.com/user-attachments/assets/a5bf2d18-9200-49ca-ac76-0d260ff4d392" />
+<h3 align="center">Nivel ventanillas.</h3>
