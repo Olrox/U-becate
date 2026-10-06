@@ -1,2 +1,4 @@
 # U-becate
-Proyecto para informar y orientar  a los estudiantes sobre las becas a las cuales pueden aplicar
+El objetivo del programa “Gamificación en becas” consistió en el diseño e implementación de una estrategia pedagógica basada en la gamificación que permitiera a los estudiantes universitarios comprender de manera clara, estructurada e interactiva el proceso de solicitud de becas de la Universidad Nacional Autónoma de México.
+El proyecto tuvo como propósito principal trasladar un proceso administrativo complejo a un entorno digital accesible, en el cual el usuario pudiera experimentar de manera simulada cada una de las etapas del trámite, desde la consulta de convocatorias hasta la obtención del apoyo económico. Asimismo, se buscó fomentar la lectura crítica de las convocatorias, el seguimiento adecuado de instrucciones y la responsabilidad individual en la gestión de trámites institucionales.
+
