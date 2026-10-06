@@ -40,5 +40,5 @@ El proyecto cuenta con un prototipo funcional que presenta una estructura secuen
 Ubecate demuestra el potencial de la gamificación como herramienta educativa para facilitar la comprensión de procesos administrativos complejos. Mediante la simulación, la toma de decisiones, el cambio de rol y la representación de errores comunes, el videojuego busca reducir la incertidumbre de los estudiantes y fomentar una mayor autonomía y responsabilidad durante la gestión de trámites de becas. 
 
 ##Anexo: Imagenes proyecto
-<img src>"Menú juego" width="1000"/>
+<img src> "Imagenes juego/Imagenes SS/Menú juego.png" width="1000"/>
 <h3 align="center">Imagen tutorial.</h3>
